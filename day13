@@ -1,0 +1,67 @@
+Q25 Write a program to implement a basic calculator using switch-case for +, -, *, /, %.
+code:
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+    char op;
+
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter operator (+, -, *, /, %%): ");
+    scanf(" %c", &op);
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    switch (op) {
+        case '+':
+            printf("Result = %d\n", num1 + num2);
+            break;
+
+        case '-':
+            printf("Result = %d\n", num1 - num2);
+            break;
+
+        case '*':
+            printf("Result = %d\n", num1 * num2);
+            break;
+
+        case '/':
+            if (num2 != 0)
+                printf("Result = %.2f\n", (float)num1 / num2);
+            else
+                printf("Error! Division by zero.\n");
+            break;
+
+        case '%':
+            if (num2 != 0)
+                printf("Result = %d\n", num1 % num2);
+            else
+                printf("Error! Modulus by zero.\n");
+            break;
+
+        default:
+            printf("Invalid operator!\n");
+    }
+
+    return 0;
+}
+
+Q26 Write a program to print numbers from 1 to n.
+  code:
+#include <stdio.h>
+
+int main() {
+    int n, i;
+
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+        printf("%d ", i);
+    }
+
+    return 0;
+}
