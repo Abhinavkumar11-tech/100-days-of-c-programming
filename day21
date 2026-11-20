@@ -1,0 +1,59 @@
+Q41
+  #include <stdio.h>
+
+int main() {
+    int n, temp, first, last, digits = 1;
+    int power = 1, result;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Enter a positive number");
+        return 0;
+    }
+
+    temp = n;
+    last = n % 10;
+
+    while (temp >= 10) {
+        temp /= 10;
+        digits++;
+    }
+
+    first = temp;
+
+    for (int i = 1; i < digits; i++) {
+        power *= 10;
+    }
+
+    result = last * power + (n % power) / 10 * 10 + first;
+
+    if (digits == 1)
+        result = n;
+
+    printf("Result = %d", result);
+
+    return 0;
+}
+Q42#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n / 2; i++) {
+        if (n % i == 0) {
+            sum += i;
+        }
+    }
+
+    if (n > 1 && sum == n)
+        printf("Perfect Number");
+    else
+        printf("Not a Perfect Number");
+
+    return 0;
+}
