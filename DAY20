@@ -1,0 +1,63 @@
+Q39
+#include <stdio.h>
+
+int main() {
+    int n, rem, product = 1, found = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n < 0)
+        n = -n;
+
+    while (n > 0) {
+        rem = n % 10;
+
+        if (rem % 2 != 0) {
+            product *= rem;
+            found = 1;
+        }
+
+        n /= 10;
+    }
+
+    if (found)
+        printf("Product = %d", product);
+    else
+        printf("No odd digits found");
+
+    return 0;
+}
+
+Q40
+#include <stdio.h>
+
+int main() {
+    long long n, result = 0, place = 1;
+    int digit;
+
+    printf("Enter a binary number: ");
+    scanf("%lld", &n);
+
+    if (n == 0) {
+        printf("1's Complement = 1");
+        return 0;
+    }
+
+    while (n > 0) {
+        digit = n % 10;
+
+        if (digit != 0 && digit != 1) {
+            printf("Invalid Binary Number");
+            return 0;
+        }
+
+        result += (1 - digit) * place;
+        place *= 10;
+        n /= 10;
+    }
+
+    printf("1's Complement = %lld", result);
+
+    return 0;
+}
