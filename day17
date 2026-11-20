@@ -1,0 +1,90 @@
+Q33
+  #include <stdio.h>
+
+int main() {
+    int n, temp, rem, digits = 0;
+    int sum = 0, power;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Not an Armstrong Number");
+        return 0;
+    }
+
+    temp = n;
+
+    do {
+        digits++;
+        temp /= 10;
+    } while (temp != 0);
+
+    temp = n;
+
+    while (temp > 0) {
+        rem = temp % 10;
+        power = 1;
+
+        for (int i = 1; i <= digits; i++) {
+            power *= rem;
+        }
+
+        sum += power;
+        temp /= 10;
+    }
+
+    if (sum == n)
+        printf("Armstrong Number");
+    else
+        printf("Not an Armstrong Number");
+
+    return 0;
+}
+
+Q34
+  #include <stdio.h>
+
+int main() {
+    int n, flag = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n <= 1) {
+        flag = 0;
+    }
+
+    for (int i = 2; i <= n / i; i++) {
+        if (n % i == 0) {
+            flag = 0;
+            break;
+        }
+    }
+
+    if (flag)
+        printf("Prime Number");
+    else
+        printf("Not a Prime Number");
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
