@@ -1,0 +1,77 @@
+Q37
+#include <stdio.h>
+
+int main() {
+    int a, b, x, y, temp, gcd, lcm;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    x = a;
+    y = b;
+
+    if (x < 0) x = -x;
+    if (y < 0) y = -y;
+
+    while (y != 0) {
+        temp = y;
+        y = x % y;
+        x = temp;
+    }
+
+    gcd = x;
+
+    if (a == 0 || b == 0)
+        lcm = 0;
+    else
+        lcm = (a / gcd) * b;
+
+    if (lcm < 0) lcm = -lcm;
+
+    printf("LCM = %d", lcm);
+
+    return 0;
+}
+
+Q38
+  #include <stdio.h>
+
+int main() {
+    int n, rem, sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n < 0)
+        n = -n;
+
+    while (n > 0) {
+        rem = n % 10;
+        sum += rem;
+        n /= 10;
+    }
+
+    printf("Sum of digits = %d", sum);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
